@@ -1,0 +1,33 @@
+syntax: glob
+*.metagen
+*.ipch
+*.dbmdl
+*.dll
+*.exe
+*.pdb
+*.lib
+*.old
+*.user
+*.bak
+*.resources
+*.sdf
+*.suo
+*.licenses
+*.version
+*.dat
+*.pch
+*.obj
+*.idb
+*.exp
+*.lastbuildstate
+*_ReSharper.*
+*_UpgradeReport_Files*
+*.orig
+Installer/WixUI/*
+out/*
+.idea/*
+*.zip
+
+syntax: regexp
+# Убираем Debug и Release директории
+[\\|\/](?i)(Debug|Release)(?!.*\..*)
