@@ -110,7 +110,10 @@ public class Point implements Comparable<Point> {
     // unit test
     public static void main(String[] args) {
         /* YOUR CODE HERE */
-        String homeDir = Point.class.getProtectionDomain().getCodeSource().getLocation().toString();
+        String homeDir = "";
+
+        //homeDir = Point.class.getProtectionDomain().getCodeSource().getLocation().toString();
+
         System.out.printf("Home: %s ",homeDir );
         // rescale coordinates and turn on animation mode
         StdDraw.setXscale(0, 32768);

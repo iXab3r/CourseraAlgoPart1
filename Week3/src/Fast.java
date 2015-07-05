@@ -7,19 +7,24 @@ public class Fast {
 
     private static  HashSet<String>  segments;
 
+    private static final boolean isDebug = false;
+
     public static void main(String[] args)
     {
         segments = new HashSet<String>();
         InitializeGraph();
 
-        boolean isDebug = true;
+        String homeDir = "";
 
-        String homeDir = isDebug ? Point.class.getProtectionDomain().getCodeSource().getLocation().toString() : "";
+        if (isDebug)
+        {
+            homeDir = Point.class.getProtectionDomain().getCodeSource().getLocation().toString();
+        }
+
         String filename = homeDir+args[0];
         if (isDebug)
         {
             System.out.printf("FileName: %s ",filename );
-
         }
 
         ArrayList<Point> points = ReadPoints(filename);
@@ -45,7 +50,7 @@ public class Fast {
         {
             Arrays.sort(orderedPoints, p0.SLOPE_ORDER);
 
-            if (isDebug && false)
+            if (isDebug)
             {
                 System.out.printf("\tOrderedPoints(origin - %s)\n",p0);
                 for(Point p : orderedPoints)

@@ -1,17 +1,24 @@
 import java.util.ArrayList;
 
 public class Brute {
+
+    private static final boolean isDebug = false;
+
     public static void main(String[] args)
     {
         InitializeGraph();
-        boolean isDebug = false;
 
-        String homeDir = isDebug ? Point.class.getProtectionDomain().getCodeSource().getLocation().toString() : "";
+        String homeDir = "";
+
+        if (isDebug)
+        {
+            homeDir = Point.class.getProtectionDomain().getCodeSource().getLocation().toString();
+        }
+
         String filename = homeDir+args[0];
         if (isDebug)
         {
             System.out.printf("FileName: %s ",filename );
-
         }
 
         ArrayList<Point> points = ReadPoints(filename);
